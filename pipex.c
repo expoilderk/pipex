@@ -14,6 +14,10 @@ int	main(int argc, char *argv[])
 	int fd2[2];
 	int status;
 	int pid;
+	
+    char *cmd1[] = {"/bin/ls", ".", NULL};
+    char *cmd2[] = {"/usr/bin/wc", "-c", NULL};
+    extern char **environ;
 
 	pipe(fd1); /* Comunica ls e grep */
 
@@ -21,15 +25,17 @@ int	main(int argc, char *argv[])
 
 	if(pid == 0) /* Filho 1 */
 	{
+        printf("Filho 1");
 		close(fd1[READ_END]); /* Fechar fd desnecessário */
-
+        
 		dup2(fd1[WRITE_END], STDOUT_FILENO);
 		close(fd1[WRITE_END]);
 
-		execlp("/bin/ls", "ls", "-l", NULL);
+		execve(cmd1[0], cmd1, environ);
 	}
 	else /* Pai */
 	{
+        printf("Pai");
 		close(fd1[WRITE_END]); /* Fechar fd desnecessário */
 
 		pipe(fd2); /* Comunica grep e wc */
@@ -37,6 +43,7 @@ int	main(int argc, char *argv[])
 
 		if(pid == 0) /* Filho 2 */
 		{
+            printf("Filho 2");
 			close(fd2[READ_END]); /* Fechar fd desnecessário */
 
 			dup2(fd1[READ_END], STDIN_FILENO);
@@ -45,29 +52,13 @@ int	main(int argc, char *argv[])
 			dup2(fd2[WRITE_END], STDOUT_FILENO);
 			close(fd2[WRITE_END]);
 
-			execlp("/usr/bin/grep", "grep", "D", NULL);
-		}
-		else /* Pai */
-		{
-			close(fd1[READ_END]); /* Fechar fd desnecessário */
-			close(fd2[WRITE_END]); /* Fechar fd desnecessário */
-
-			pid = fork();
-
-			if(pid == 0) /* Filho 3 */
-			{
-				dup2(fd2[READ_END], STDIN_FILENO);
-				close(fd2[READ_END]);
-
-				execlp("/usr/bin/wc", "wc", "-l", NULL);
-			}
+			execve(cmd2[0], cmd2, environ);
 		}
 	}
 
 	close(fd2[READ_END]); /* Fechar fd que ficou aberto no Pai */
 
 	/* wait para cada filho */
-	wait(&status);
 	wait(&status);
 	wait(&status);
 

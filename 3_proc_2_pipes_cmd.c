@@ -14,6 +14,10 @@ int	main(int argc, char *argv[])
 	int fd2[2];
 	int status;
 	int pid;
+	//char *path = "/bin/zsh";
+	char *argVec[] = {"ls", "ls", "-l"};
+	char *argVec1[] = {"grep", "grep", "D"};
+	char *argVec2[] = {"wc", "-l", NULL};
 
 	pipe(fd1); /* Comunica ls e grep */
 
@@ -26,7 +30,7 @@ int	main(int argc, char *argv[])
 		dup2(fd1[WRITE_END], STDOUT_FILENO);
 		close(fd1[WRITE_END]);
 
-		execlp("/bin/ls", "ls", "-l", NULL);
+		execve("/bin/ls", argVec, NULL);
 	}
 	else /* Pai */
 	{
@@ -45,7 +49,7 @@ int	main(int argc, char *argv[])
 			dup2(fd2[WRITE_END], STDOUT_FILENO);
 			close(fd2[WRITE_END]);
 
-			execlp("/usr/bin/grep", "grep", "D", NULL);
+			execve("/usr/bin/grep", argVec1, NULL);
 		}
 		else /* Pai */
 		{
@@ -59,7 +63,7 @@ int	main(int argc, char *argv[])
 				dup2(fd2[READ_END], STDIN_FILENO);
 				close(fd2[READ_END]);
 
-				execlp("/usr/bin/wc", "wc", "-l", NULL);
+				execve("/usr/bin/wc", argVec2, NULL);
 			}
 		}
 	}
