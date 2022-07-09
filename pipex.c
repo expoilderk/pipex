@@ -15,8 +15,8 @@ int	main(int argc, char *argv[])
 	int status;
 	int pid;
 	
-    char *cmd1[] = {"/bin/ls", ".", NULL};
-    char *cmd2[] = {"/usr/bin/wc", "-c", NULL};
+    char *cmd1[] = {"/bin/ls", "-l", NULL};
+    char *cmd2[] = {"/usr/bin/wc", "-l", NULL};
     extern char **environ;
 
 	pipe(fd1); /* Comunica ls e grep */
@@ -33,30 +33,19 @@ int	main(int argc, char *argv[])
 
 		execve(cmd1[0], cmd1, environ);
 	}
-	else /* Pai */
+	else if(pid > 0) /* Pai */
 	{
-        printf("Pai");
 		close(fd1[WRITE_END]); /* Fechar fd desnecessário */
 
-		pipe(fd2); /* Comunica grep e wc */
-		pid = fork();
+		dup2(fd1[READ_END], STDIN_FILENO);
+		close(fd1[READ_END]);
 
-		if(pid == 0) /* Filho 2 */
-		{
-            printf("Filho 2");
-			close(fd2[READ_END]); /* Fechar fd desnecessário */
-
-			dup2(fd1[READ_END], STDIN_FILENO);
-			close(fd1[READ_END]);
-
-			dup2(fd2[WRITE_END], STDOUT_FILENO);
-			close(fd2[WRITE_END]);
-
-			execve(cmd2[0], cmd2, environ);
-		}
+		execve(cmd2[0], cmd2, environ);
 	}
-
-	close(fd2[READ_END]); /* Fechar fd que ficou aberto no Pai */
+	else
+	{
+		perror("Error");
+	}
 
 	/* wait para cada filho */
 	wait(&status);
