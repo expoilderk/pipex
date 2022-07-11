@@ -15,7 +15,7 @@ int	main(int argc, char *argv[])
 	int status;
 	int pid;
 	
-    char *cmd1[] = {"/bin/ls", "-l", NULL};
+    char *cmd1[] = {"/bin/ls", "ls -l", NULL};
     char *cmd2[] = {"/usr/bin/wc", "-l", NULL};
     extern char **environ;
 
