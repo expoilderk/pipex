@@ -12,5 +12,7 @@
 
 void	ft_free(char **matrix, int index);
 void	exec_cmd(char *args);
+void	exit_status(char *msg, int status);
+
 
 #endif //PIPEX_H
