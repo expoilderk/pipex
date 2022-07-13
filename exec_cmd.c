@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 08:24:36 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/12 10:40:23 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/13 12:40:56 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,38 @@
 
 void	exec_cmd(char *args)
 {
-	extern char **environ;
+	extern char **environ; // Trocar **environ por *envp[] como parametro da função
 
-	int i = 0;
-	char *env;
 	char **paths;
-	char *path;
 	char **cmd;
+	char *path;
+	int j = 0;	
+	int i = 0;
 
-	cmd = ft_split(args, ' ');
+	cmd = ft_split(args, ' '); // Criar uma função para fazer o split tratando possíveis erros
 
-	while(environ[i])
+	while(environ[i]) // Testar a ideia de eliminar esse while
 	{
 		if(!ft_strncmp(environ[i], "PATH=", 5))
 		{
 			paths = ft_split(&environ[i][5], ':');
 
-			int j = 0;
 			while(paths[j])
 			{
 				path = ft_strjoin(paths[j], "/"); //Talvez fazer uma unica join modificada para colocar o "/"
 				path = ft_strjoin(path, cmd[0]); //Aqui entra o comando que vai ser passado como argumento
 				
-				if(!access(path, F_OK | X_OK))
-				{
-					execve(path, cmd, paths);
-				}
+				if(access(path, F_OK | X_OK) == 0) // Criar função que verifica o acesso?
+					if(execve(path, cmd, paths) == -1)
+						exit_status("./pipex", EXIT_FAILURE);
+						
+				free(path); // free no path
 				j++;
 			}
 		}
 		i++;
 	}
+	//ft_free(cmd); // limpa e libera a matriz
+	//ft_free(paths); // limpa e libera a matriz
+	exit_status("./pipex", EXIT_FAILURE);
 }
