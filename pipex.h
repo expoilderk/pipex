@@ -10,7 +10,7 @@
 # include <errno.h>
 # include "libft/libft.h"
 
-void	ft_free(char **matrix, int index);
+void	ft_free(char **matrix);
 void	exec_cmd(char *args, char *envp[]);
 void	exit_status(char *msg, int status);
 int		pipex(int argc, char *argv[], char *envp[]);

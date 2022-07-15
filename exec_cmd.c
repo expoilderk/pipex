@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 08:24:36 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/15 11:51:17 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/15 14:23:20 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	exec_cmd(char *args, char *envp[])
 {
-//	extern char **environ; // Trocar **environ por *envp[] como parametro da função
-
 	char **paths;
 	char **cmd;
 	char *path;
@@ -37,7 +35,7 @@ void	exec_cmd(char *args, char *envp[])
 				
 				if(access(path, F_OK | X_OK) == 0) // Criar função que verifica o acesso?
 					if(execve(path, cmd, paths) == -1)
-						exit_status("./pipex", EXIT_FAILURE);
+						exit_status("ERROR", EXIT_FAILURE);
 						
 				free(path); // free no path
 				j++;
@@ -45,7 +43,7 @@ void	exec_cmd(char *args, char *envp[])
 		}
 		i++;
 	}
-	//ft_free(cmd); // limpa e libera a matriz
-	//ft_free(paths); // limpa e libera a matriz
-	exit_status("./pipex", EXIT_FAILURE);
+	ft_free(cmd); // limpa e libera a matriz
+	ft_free(paths); // limpa e libera a matriz
+	exit_status("ERROR", EXIT_FAILURE);
 }

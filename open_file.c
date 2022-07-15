@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 10:19:53 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/15 11:47:59 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/15 14:20:30 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	open_file(char *path, char *flag)
 {
-	int file;
-	char *in = "in";
-	char *out = "out";
+	int		file;
+	char	*in;
+	char	*out;
 
 	file = 0;
-	if(flag == in)
+	in = "in";
+	out = "out";
+	if (flag == in)
 	{
 		file = open(path, O_RDONLY);
-		if(file == -1)
-			exit_status("File In", EXIT_FAILURE);
+		if (file == -1)
+			exit_status("ERROR", EXIT_FAILURE);
 	}
-	else if(flag == out)
+	else if (flag == out)
 	{
 		file = open(path, O_WRONLY | O_TRUNC | O_CREAT, 0777);
-		printf("File %d\n", file);
-		if(file == -1)
-			exit_status("File Out", EXIT_FAILURE);
+		if (file == -1)
+			exit_status("ERROR", EXIT_FAILURE);
 	}
-
 	return (file);
 }
