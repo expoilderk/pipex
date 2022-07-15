@@ -11,8 +11,11 @@
 # include "libft/libft.h"
 
 void	ft_free(char **matrix, int index);
-void	exec_cmd(char *args);
+void	exec_cmd(char *args, char *envp[]);
 void	exit_status(char *msg, int status);
-
+int		pipex(int argc, char *argv[], char *envp[]);
+void	child_in(int fd[], int fd_in, char *argv, char *envp[]);
+void	child_out(int fd[], int fd_out, char *argv, char *envp[]);
+int	open_file(char *path, char *flag);
 
 #endif //PIPEX_H

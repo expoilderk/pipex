@@ -21,30 +21,23 @@ CFLAGS = -Wall -Werror -Wextra
 CC = cc
 RM = rm -f
 
-MSG_CLEAN = @echo "\nCleaned ✔︎\n"
-MSG_COMPILED = @echo "\nCompiled ✔︎\n"
-
 NAME = libft.a
 
 $(NAME): $(OBJ)
 	$(ARCHIVE) $(NAME) $(OBJ)
-	$(MSG_COMPILED)
 
 all: $(NAME)
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
-	$(MSG_CLEAN)
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MSG_CLEAN)
 
 re: fclean all
 
 bonus: $(OBJ_BONUS)
 	$(ARCHIVE) $(NAME) $(OBJ) $(OBJ_BONUS)
-	$(MSG_COMPILED)
 
 rebonus: fclean all bonus
 

@@ -6,15 +6,15 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 08:24:36 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/13 12:40:56 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/15 11:51:17 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	exec_cmd(char *args)
+void	exec_cmd(char *args, char *envp[])
 {
-	extern char **environ; // Trocar **environ por *envp[] como parametro da função
+//	extern char **environ; // Trocar **environ por *envp[] como parametro da função
 
 	char **paths;
 	char **cmd;
@@ -24,11 +24,11 @@ void	exec_cmd(char *args)
 
 	cmd = ft_split(args, ' '); // Criar uma função para fazer o split tratando possíveis erros
 
-	while(environ[i]) // Testar a ideia de eliminar esse while
+	while(envp[i]) // Testar a ideia de eliminar esse while
 	{
-		if(!ft_strncmp(environ[i], "PATH=", 5))
+		if(!ft_strncmp(envp[i], "PATH=", 5))
 		{
-			paths = ft_split(&environ[i][5], ':');
+			paths = ft_split(&envp[i][5], ':');
 
 			while(paths[j])
 			{
