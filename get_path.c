@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec_cmd.c                                         :+:      :+:    :+:   */
+/*   get_path.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 18:17:15 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 19:42:42 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/17 19:57:09 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/17 20:03:31 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	exec_cmd(char **paths, char **cmd, int index)
+char	**get_path(char *envp[])
 {
-	char	*path;
+	int		i;
+	char	**paths;
 
-	path = ft_strjoin(paths[index], "/");
-	path = ft_strjoin(path, cmd[0]);
-	if (access(path, F_OK | X_OK) == 0)
-		if (execve(path, cmd, paths) == -1)
-			exit_status("ERROR", EXIT_FAILURE);
-	free(path);
+	i = 0;
+	while (envp[i])
+	{
+		if (!ft_strncmp(envp[i], "PATH=", 5))
+		{
+			paths = ft_split(&envp[i][5], ':');
+			return (paths);
+		}
+		i++;
+	}
+	return (NULL);
 }

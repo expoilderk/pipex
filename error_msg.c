@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec_cmd.c                                         :+:      :+:    :+:   */
+/*   error_msg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 18:17:15 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 19:42:42 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/17 19:07:54 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/17 19:15:04 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	exec_cmd(char **paths, char **cmd, int index)
+void	error_msg(char *msg, int fd)
 {
-	char	*path;
-
-	path = ft_strjoin(paths[index], "/");
-	path = ft_strjoin(path, cmd[0]);
-	if (access(path, F_OK | X_OK) == 0)
-		if (execve(path, cmd, paths) == -1)
-			exit_status("ERROR", EXIT_FAILURE);
-	free(path);
+	ft_putendl_fd(msg, fd);
+	exit(EXIT_FAILURE);
 }

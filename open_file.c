@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec_cmd.c                                         :+:      :+:    :+:   */
+/*   open_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 18:17:15 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 19:42:42 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/15 10:19:53 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/17 20:24:03 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	exec_cmd(char **paths, char **cmd, int index)
+int	open_file(char *path, char *flag)
 {
-	char	*path;
+	int		file;
+	char	*in;
+	char	*out;
 
-	path = ft_strjoin(paths[index], "/");
-	path = ft_strjoin(path, cmd[0]);
-	if (access(path, F_OK | X_OK) == 0)
-		if (execve(path, cmd, paths) == -1)
+	file = 0;
+	in = "in";
+	out = "out";
+	if (flag == in)
+	{
+		file = open(path, O_RDONLY);
+		if (file == -1)
 			exit_status("ERROR", EXIT_FAILURE);
-	free(path);
+	}
+	else if (flag == out)
+	{
+		file = open(path, O_WRONLY | O_TRUNC | O_CREAT, 0777);
+		if (file == -1)
+			exit_status("ERROR", EXIT_FAILURE);
+	}
+	return (file);
 }
