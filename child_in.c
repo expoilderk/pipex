@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   child_in.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 08:50:40 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 20:45:57 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/15 09:08:33 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/17 21:03:05 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char *argv[], char *envp[])
+void	child_in(int fd[], int fd_in, char *argv, char *envp[])
 {
-	pipex(argc, argv, envp);
-	return (0);
+	pid_t	pid;
+
+	pid = fork();
+	if (pid < 0)
+		exit_status("Error", EXIT_FAILURE);
+	else if (pid == 0)
+	{
+		dup2(fd_in, 0);
+		close(fd[0]);
+		dup2(fd[1], 1);
+		close(fd[1]);
+		send_cmd(argv, envp);
+	}
 }

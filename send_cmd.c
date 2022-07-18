@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:24:00 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 20:09:38 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/17 21:04:38 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	send_cmd(char *args, char *envp[])
 	cmd = ft_split(args, ' ');
 	paths = get_path(envp);
 	if (paths == NULL)
-		error_msg("ERROR: NO PATH", 2);
+		error_msg("Error: no PATH", 2);
 	while (paths[i++])
 		exec_cmd(paths, cmd, i);
 	ft_free(cmd);
 	ft_free(paths);
-	exit_status("ERROR", EXIT_FAILURE);
+	exit_status("Error", EXIT_FAILURE);
 }
