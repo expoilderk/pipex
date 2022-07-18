@@ -6,13 +6,13 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:17:19 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 21:14:09 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/18 15:54:16 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	pipex(int argc, char *argv[], char *envp[])
+int	pipex(char *argv[], char *envp[])
 {
 	int		fd[2];
 	int		status;
@@ -20,8 +20,6 @@ int	pipex(int argc, char *argv[], char *envp[])
 	int		fd_out;
 
 	status = 0;
-	if (argc != 5)
-		msg_error("Error: wrong count of arguments", 1);
 	if (pipe(fd) == -1)
 		msg_perror("Error", EXIT_FAILURE);
 	fd_in = open(argv[1], O_RDONLY);
