@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_msg.c                                        :+:      :+:    :+:   */
+/*   msg_error.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 19:07:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 19:15:04 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/17 21:11:41 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	error_msg(char *msg, int fd)
+void	msg_error(char *msg, int fd)
 {
 	ft_putendl_fd(msg, fd);
 	exit(EXIT_FAILURE);

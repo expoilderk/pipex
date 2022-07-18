@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 09:44:16 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/17 21:03:17 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/17 21:52:52 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@ void	child_out(int fd[], int fd_out, char *argv, char *envp[])
 
 	pid = fork();
 	if (pid < 0)
-		exit_status("Error", EXIT_FAILURE);
+		msg_perror("Error", EXIT_FAILURE);
 	else if (pid == 0)
 	{
-		dup2(fd_out, 1);
+		if (dup2(fd_out, 1) == -1)
+			msg_perror("Error", EXIT_FAILURE);
 		close(fd[1]);
-		dup2(fd[0], 0);
+		if (dup2(fd[0], 0) == -1)
+			msg_perror("Error", EXIT_FAILURE);
 		close(fd[0]);
 		send_cmd(argv, envp);
 	}
