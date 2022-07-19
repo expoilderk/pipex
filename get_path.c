@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 19:57:09 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/18 11:29:43 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/19 16:08:15 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	**get_path(char *envp[])
 			paths = ft_split(&envp[i][5], ':');
 			if (paths == NULL)
 			{	
-				ft_free(paths);
+				free_matrix(paths);
 				break ;
 			}
 			return (paths);
