@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/19 16:07:15 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/20 16:37:49 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	child_in(int fd[], int fd_in, char *argv, char *envp[]);
 void	child_out(int fd[], int fd_out, char *argv, char *envp[]);
 
 char	**ft_split_mod(char const *s, char c);
+char	*ft_strtrim_mod(char const *s1, char const *set);
+
 char	**get_path(char *envp[]);
 char	**get_cmd(char *args);
 void	send_cmd(char *args, char *envp[]);
