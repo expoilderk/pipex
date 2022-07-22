@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 16:14:47 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 10:19:25 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 11:49:38 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,22 @@
 char	**get_cmd(char *args)
 {
 	char	**cmd;
-	int		i;
+	char	**temp;
+	int		index;
 
-	i = 0;
-
+	index = 0;
+	temp = NULL;
 	cmd = parser_cmd(args, ' ');
-	while (cmd[i])
+	while (cmd[index])
+		index++;
+	temp = (char **)malloc(index * sizeof(char *));
+	index = 0;
+	while (cmd[index])
 	{
-		cmd[i] = trim_cmd(cmd[i], "'\"");
-		// TODO: tratamento de erro aqui
-		i++;
+		temp[index] = trim_cmd(cmd[index], "'\"");
+		free(cmd[index]);
+		cmd[index] = temp[index];
+		index++;
 	}
-	if (!cmd)
-		free_matrix(cmd);
 	return (cmd);
 }
-
-/*
-- Usar matriz temporária como swap para evitar segmentation fault
-- Dar free nas matrizes (proteção para split e trim)
-*/
