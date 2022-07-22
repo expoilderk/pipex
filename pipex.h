@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/20 16:37:49 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:45:23 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	send_cmd(char *args, char *envp[]);
 void	exec_cmd(char **paths, char **cmd, int index);
 
 void	msg_perror(char *msg, int status);
-void	msg_error(char *msg, int fd);
+void	msg_error(char *msg, char *cmd, int fd);
 void	free_matrix(char **matrix);
 
 #endif //PIPEX_H

@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 08:50:40 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/19 17:15:21 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:50:42 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char *argv[], char *envp[])
 {
 	if (argc != 5)
-		msg_error("Error: wrong count of arguments", 1);
+		msg_error("Error: Invalid number of arguments", "", 1);
 	pipex(argv, envp);
 	return (0);
 }

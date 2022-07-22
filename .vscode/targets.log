@@ -1,12 +1,15 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 4.3
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
+ 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 17 18:08:35 2022
+# Make data base, printed on Thu Jul 21 18:29:14 2022
 
 # Variables
 
@@ -39,13 +42,14 @@ QT_ACCESSIBILITY = 1
 # environment
 SNAP_INSTANCE_NAME = code
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/101/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
 PWD = /home/expoilderk/Documentos/Programação/42/pipex
+ 
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -59,7 +63,7 @@ OLDPWD = /home/expoilderk/Documentos/Programação/42
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/expoilderk/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = /home/expoilderk/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # makefile (from 'Makefile', line 3)
 LIBFT = libft
 # environment
@@ -71,7 +75,7 @@ XAUTHORITY = /run/user/1000/gdm/Xauthority
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.108
+GNOME_TERMINAL_SERVICE = :1.118
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -101,13 +105,13 @@ SNAP_REEXEC =
 # environment
 ZSH = /home/expoilderk/.oh-my-zsh
 # environment
-VSCODE_PID = 36533
+VSCODE_PID = 8089
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/mreis:@/tmp/.ICE-unix/2535,unix/mreis:/tmp/.ICE-unix/2535
+SESSION_MANAGER = local/mreis:@/tmp/.ICE-unix/2132,unix/mreis:/tmp/.ICE-unix/2132
 # automatic
 *F = $(notdir $*)
 # environment
@@ -117,7 +121,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"dc7ba51c4efcfec965eaa07de065afd6.pt-br","_translationsConfigFile":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/tcf.json","_cacheRoot":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br","_resolvedLanguagePackCoreLocation":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/home/expoilderk/.config/Code/clp/dc7ba51c4efcfec965eaa07de065afd6.pt-br/corrupted.info","_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -131,7 +135,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 1
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/162616cd_13c0_407b_9baf_7d33b7a04a2e
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/de9369e5_5cfa_4085_876c_153605462986
 # environment
 MAKELEVEL := 0
 # default
@@ -151,9 +155,9 @@ HEADER = pipex.h
 # environment
 SNAP_USER_COMMON = /home/expoilderk/snap/code/common
 # environment
-SNAP = /snap/code/101
+SNAP = /snap/code/102
 # environment
-SNAP_REVISION = 101
+SNAP_REVISION = 102
 # environment
 SNAP_REAL_HOME = /home/expoilderk
 # environment
@@ -183,7 +187,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := pipex
 # environment
-SYSTEMD_EXEC_PID = 2689
+SYSTEMD_EXEC_PID = 2311
 # makefile (from 'Makefile', line 15)
 RM = rm -f
 # environment
@@ -199,7 +203,7 @@ MAKE_VERSION := 4.3
 # environment
 DISABLE_WAYLAND = 1
 # environment
-SNAP_DATA = /var/snap/code/101
+SNAP_DATA = /var/snap/code/102
 # environment
 SNAP_CONTEXT = JAysqnL4SvizZFxtkzZShjnTjbvZX0NGO0jzB6cBp5RqkMkwgPGw
 # environment
@@ -225,13 +229,13 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-4da83e53-1.69.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-4da83e53-1.69.2-main.sock
 # environment
 TERM = xterm-256color
 # environment
 SNAP_NAME = code
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/101/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -239,7 +243,7 @@ IM_CONFIG_PHASE = 1
 # automatic
 <F = $(notdir $<)
 # environment
-SNAP_VERSION = b06ae3b2
+SNAP_VERSION = 3b889b09
 # default
 SUFFIXES := 
 # environment
@@ -255,7 +259,7 @@ SNAP_COMMON = /var/snap/code/common
 # makefile (from 'Makefile', line 14)
 CC = cc
 # environment
-SNAP_USER_DATA = /home/expoilderk/snap/code/101
+SNAP_USER_DATA = /home/expoilderk/snap/code/102
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -263,6 +267,7 @@ GDMSESSION = ubuntu-xorg
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
+ 
 # Load=126/1024=12%, Rehash=0, Collisions=15/160=9%
 
 # Pattern-specific Variable Values
@@ -271,39 +276,52 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2051, inode 6874297): 19 files, no impossibilities.
+# . (device 2051, inode 7192935): 38 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 38 files, no impossibilities in 1 directories.
 
 # Implicit Rules
- 
 
 # No implicit rules.
 
 # Files
 
 # Not a target:
-exit_status.o:
+send_cmd.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 18:07:37.597542616
+#  Last modified 2022-07-21 18:24:01.490856248
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+msg_error.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.354850886
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 18:07:16.120482839
+#  Last modified 2022-07-21 18:21:14.508968694
 #  File has been updated.
 #  Successfully updated.
 
-pipex: exec_cmd.o exit_status.o ft_free.o main.o
+pipex: child_in.o child_out.o exec_cmd.o free_matrix.o ft_split_mod.o ft_strtrim_mod.o get_cmd.o get_path.o main.o msg_error.o msg_perror.o pipex.o send_cmd.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-17 18:07:38.749599389
+#  Last modified 2022-07-21 18:24:02.850910055
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 19):
 	make -C $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
+
+# Not a target:
+ft_strtrim_mod.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.178843944
+#  File has been updated.
+#  Successfully updated.
 
 bonus:
 #  Phony target (prerequisite of .PHONY).
@@ -314,7 +332,14 @@ bonus:
 # Not a target:
 exec_cmd.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 18:07:37.557540645
+#  Last modified 2022-07-21 18:24:01.01083732
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+msg_perror.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.398852621
 #  File has been updated.
 #  Successfully updated.
 
@@ -327,11 +352,53 @@ clean:
 	make clean -C $(LIBFT)
 	$(RM) $(OBJ) $(OBJ_BONUS)
 
+# Not a target:
+get_cmd.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.22284568
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ft_split_mod.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.138842367
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+child_in.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:00.906833239
+#  File has been updated.
+#  Successfully updated.
+
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+
+# Not a target:
+free_matrix.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.062839371
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+pipex.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.446854513
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+get_path.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-21 18:24:01.266847415
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -357,16 +424,17 @@ fclean: clean
 	$(RM) $(NAME)
 
 # Not a target:
-ft_free.o:
+main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 18:07:37.641544785
+#  Last modified 2022-07-21 18:24:01.31084915
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-main.o:
+ 
+child_out.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 18:07:37.68954715
+#  Last modified 2022-07-21 18:24:00.950834964
 #  File has been updated.
 #  Successfully updated.
 
@@ -376,19 +444,19 @@ main.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/38=0%
+# Load=23/1024=2%, Rehash=0, Collisions=0/56=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 240 B / avg = 8 B
-# current buf: size = 8162 B / used = 240 B / count = 29 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 469 B / avg = 9 B
+# current buf: size = 8162 B / used = 469 B / count = 48 / avg = 9 B
 
-# strcache performance: lookups = 53 / hit rate = 45%
+# strcache performance: lookups = 81 / hit rate = 40%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=0/53=0%
-# Finished Make data base on Sun Jul 17 18:08:35 2022
+# Load=48/8192=1%, Rehash=0, Collisions=0/81=0%
+# Finished Make data base on Thu Jul 21 18:29:14 2022
 
  
