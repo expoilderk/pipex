@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_mod.c                                     :+:      :+:    :+:   */
+/*   parser_cmd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:50:45 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 00:07:47 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 10:17:40 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static char	**ft_fillwords(char **splits, char *str, char c, int words)
 	return (splits);
 }
 
-char	**ft_split_mod(char const *s, char c)
+char	**parser_cmd(char const *s, char c)
 {
 	char	**splits;
 	char	*str;

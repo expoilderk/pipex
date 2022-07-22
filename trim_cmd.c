@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim_mod.c                                   :+:      :+:    :+:   */
+/*   trim_cmd.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 10:35:39 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/20 20:20:58 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 10:19:23 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*ft_strtrim_mod(char const *s1, char const *set)
+char	*trim_cmd(char const *s1, char const *set)
 {
 	size_t	slen;
 	char	*trim;

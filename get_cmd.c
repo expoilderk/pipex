@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 16:14:47 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/21 23:43:20 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 10:19:25 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	**get_cmd(char *args)
 
 	i = 0;
 
-	cmd = ft_split_mod(args, ' ');
+	cmd = parser_cmd(args, ' ');
 	while (cmd[i])
 	{
-		cmd[i] = ft_strtrim_mod(cmd[i], "'\"");
+		cmd[i] = trim_cmd(cmd[i], "'\"");
 		// TODO: tratamento de erro aqui
 		i++;
 	}
