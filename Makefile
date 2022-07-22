@@ -1,5 +1,5 @@
 NAME = pipex
-HEADER = pipex.h
+HEADER = pipex.h pipex_bonus.h 
 LIBFT = libft
 
 SRC = main.c pipex.c child_in.c child_out.c \
@@ -9,7 +9,10 @@ SRC = main.c pipex.c child_in.c child_out.c \
 
 OBJ = $(SRC:.c=.o)
 
-#SRC_BONUS =
+SRC_BONUS = main_bonus.c pipex_bonus.c child_in_bonus.c child_out_bonus.c \
+	push_cmd_bonus.c get_cmd_bonus.c get_path_bonus.c exec_cmd_bonus.c \
+	parser_cmd_bonus.c modifiers_bonus.c trim_cmd_bonus.c \
+	msg_perror_bonus.c msg_error_bonus.c free_matrix_bonus.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
