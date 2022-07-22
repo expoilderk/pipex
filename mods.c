@@ -1,37 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_cmd.c                                          :+:      :+:    :+:   */
+/*   mods.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 16:14:47 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/21 23:43:20 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/21 23:51:07 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/22 00:08:57 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	**get_cmd(char *args)
+void	mod_wordlen(char *str, int slen)
 {
-	char	**cmd;
-	int		i;
-
-	i = 0;
-
-	cmd = ft_split_mod(args, ' ');
-	while (cmd[i])
+	if (*str == '\"')
 	{
-		cmd[i] = ft_strtrim_mod(cmd[i], "'\"");
-		// TODO: tratamento de erro aqui
-		i++;
+		str++;
+		slen++;
+		while (*str != '\"')
+		{
+			str++;
+			slen++;
+		}
 	}
-	if (!cmd)
-		free_matrix(cmd);
-	return (cmd);
+	else if (*str == '\'')
+	{
+		str++;
+		slen++;
+		while (*str != '\'')
+		{
+			str++;
+			slen++;
+		}
+	}
 }
 
-/*
-- Usar matriz temporária como swap para evitar segmentation fault
-- Dar free nas matrizes (proteção para split e trim)
-*/
+void	mod_countwords(char *str, int words)
+{
+	if (*str == '\"')
+	{
+		str++;
+		words++;
+		while (*str != '\"')
+			str++;
+	}
+	else if (*str == '\'')
+	{
+		str++;
+		words++;
+		while (*str != '\'')
+			str++;
+	}
+}

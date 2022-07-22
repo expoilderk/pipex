@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:50:45 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/20 14:51:01 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 00:07:47 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,7 @@ static int	ft_wordlen(char *str, char c)
 	int	slen;
 
 	slen = 0;
-	if (*str == '\"')
-	{
-		str++;
-		slen++;
-		while (*str != '\"')
-		{
-			str++;
-			slen++;
-		}	
-	}
-	else if (*str == '\'')
- 	{
-		str++;
-		slen++;
-		while (*str != '\'')
-		{
-			str++;
-			slen++;
-		}	
-	}
+	mod_wordlen(str, slen);
 	while (*str != '\0' && *str != c)
 	{
 		str++;
@@ -60,21 +41,7 @@ static int	ft_countwords(char *str, char c)
 	words = 0;
 	while (*str != '\0')
 	{
-		if (*str == '\"')
-		{
-			str++;
-			words++;
-			while (*str != '\"')
-				str++;
-		}
-		else if (*str == '\'')
-		{
-			str++;
-			words++;
-			while (*str != '\'')
-				str++;
-		}
-		
+		mod_countwords(str, words);
 		while (*str && *str == c)
 			str++;
 		wordlen = ft_wordlen(str, c);
