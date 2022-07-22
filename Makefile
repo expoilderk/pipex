@@ -1,4 +1,5 @@
 NAME = pipex
+NAME_BONUS = pipex_bonus
 HEADER = pipex.h pipex_bonus.h 
 LIBFT = libft
 
@@ -11,7 +12,7 @@ OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = main_bonus.c pipex_bonus.c child_in_bonus.c child_out_bonus.c \
 	push_cmd_bonus.c get_cmd_bonus.c get_path_bonus.c exec_cmd_bonus.c \
-	parser_cmd_bonus.c modifiers_bonus.c trim_cmd_bonus.c \
+	child_middle_bonus.c parser_cmd_bonus.c modifiers_bonus.c trim_cmd_bonus.c \
 	msg_perror_bonus.c msg_error_bonus.c free_matrix_bonus.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
@@ -22,11 +23,11 @@ RM = rm -f
 
 $(NAME): $(OBJ)
 	make -C $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
+	$(CC) -g $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_BONUS)
 	make -C $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME_BONUS)
 
 all: $(NAME)
 

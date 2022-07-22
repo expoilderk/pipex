@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 10:19:27 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 18:45:43 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 # include <errno.h>
 # include "libft/libft.h"
 
-int		pipex(char *argv[], char *envp[]);
+int		pipex(int argc, char *argv[], char *envp[]);
 void	child_in(int fd[], int fd_in, char *argv, char *envp[]);
+void	child_middle(int fd[], char *argv, char *envp[]);
 void	child_out(int fd[], int fd_out, char *argv, char *envp[]);
 
 void	push_cmd(char *args, char *envp[]);

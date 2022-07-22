@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:17:19 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/18 15:54:16 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/22 18:43:50 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	pipex(char *argv[], char *envp[])
 	if (fd_in == -1)
 		msg_perror("Error", EXIT_FAILURE);
 	child_in(fd, fd_in, argv[2], envp);
-	fd_out = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
+	fd_out = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	if (fd_out == -1)
 		msg_perror("Error", EXIT_FAILURE);
 	child_out(fd, fd_out, argv[3], envp);

@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_path_bonus.c                                   :+:      :+:    :+:   */
+/*   child_middle_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 19:57:09 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 18:32:41 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/22 18:20:01 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/22 18:31:49 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex_bonus.h"
 
-char	**get_path(char *envp[])
+void	child_middle(int fd[], char *argv, char *envp[])
 {
-	int		i;
-	char	**paths;
+	pid_t	pid;
 
-	i = 0;
-	while (envp[i])
+	pid = fork();
+	if (pid < 0)
+		msg_perror("Error", EXIT_FAILURE);
+	else if (pid == 0)
 	{
-		if (!ft_strncmp(envp[i], "PATH=", 5))
-		{
-			paths = ft_split(&envp[i][5], ':');
-			if (paths == NULL)
-			{
-				free_matrix(paths);
-				break ;
-			}
-			return (paths);
-		}
-		i++;
+		if (dup2(fd[1], 1) == -1)
+			msg_perror("Error", EXIT_FAILURE);
+		close(fd[1]);
+		if (dup2(fd[0], 0) == -1)
+			msg_perror("Error", EXIT_FAILURE);
+		close(fd[0]);
+		push_cmd(argv, envp);
 	}
-	msg_error("Error: no PATH", "", 2);
-	return (NULL);
 }
