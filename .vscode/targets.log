@@ -8,7 +8,7 @@ make: *** No rule to make target 'main.o', needed by 'pipex'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 25 00:11:09 2022
+# Make data base, printed on Mon Jul 25 18:37:19 2022
 
 # Variables
 
@@ -67,7 +67,7 @@ LIBFT = libft
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.V5MWP1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.S46UP1
 # default
 .LOADED := 
 # environment
@@ -75,7 +75,7 @@ LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.95
+GNOME_TERMINAL_SERVICE = :1.1253
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -83,7 +83,7 @@ LESS_TERMCAP_so = [01;47;34m
 # makefile
 CURDIR := /home/expoilderk/Documentos/42Rio/pipex
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -107,13 +107,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 1990
+VSCODE_PID = 2384
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1002,unix/manjaro:/tmp/.ICE-unix/1002
+SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1024,unix/manjaro:/tmp/.ICE-unix/1024
 # automatic
 *F = $(notdir $*)
 # environment
@@ -137,11 +137,11 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # makefile (from 'Makefile', line 12)
-SRC_BONUS = main_bonus.c pipex_bonus.c processes_bonus.c push_cmd_bonus.c split_cmd_bonus.c modifiers_bonus.c trim_cmd_bonus.c error_handler_bonus.c close_files.c
+SRC_BONUS = main_bonus.c pipex_bonus.c processes_bonus.c push_cmd_bonus.c split_cmd_bonus.c modifiers_bonus.c trim_cmd_bonus.c error_handler_bonus.c
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d4271f95_e131_49df_bfa6_a6e4d3d892f1
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/14074c97_6b68_444b_9268_758bd76280bb
 # environment
 MAKELEVEL := 0
 # default
@@ -195,7 +195,7 @@ LOGNAME = expoilderk
 # makefile
 .DEFAULT_GOAL := pipex
 # environment
-SYSTEMD_EXEC_PID = 1255
+SYSTEMD_EXEC_PID = 1278
 # makefile (from 'Makefile', line 20)
 RM = rm -f
 # environment
@@ -275,7 +275,6 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 
 # 20 files, no impossibilities in 1 directories.
 
- 
 # Implicit Rules
 
 # No implicit rules.
@@ -296,6 +295,7 @@ split_cmd.o:
 
 # Not a target:
 processes.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -309,7 +309,7 @@ pipex_bonus.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-25 00:11:07.233036951
+#  Last modified 2022-07-25 11:15:31.194574359
 #  File has been updated.
 #  Successfully updated.
 
@@ -320,12 +320,6 @@ pipex: main.o pipex.o processes.o push_cmd.o split_cmd.o modifiers.o trim_cmd.o 
 #  recipe to execute (from 'Makefile', line 23):
 	make -C $(LIBFT)
 	$(CC) -g $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
-
-# Not a target:
-close_files.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 bonus: pipex_bonus
 #  Phony target (prerequisite of .PHONY).
@@ -430,7 +424,7 @@ trim_cmd.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-pipex_bonus: main_bonus.o pipex_bonus.o processes_bonus.o push_cmd_bonus.o split_cmd_bonus.o modifiers_bonus.o trim_cmd_bonus.o error_handler_bonus.o close_files.o
+pipex_bonus: main_bonus.o pipex_bonus.o processes_bonus.o push_cmd_bonus.o split_cmd_bonus.o modifiers_bonus.o trim_cmd_bonus.o error_handler_bonus.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -456,19 +450,19 @@ processes_bonus.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=28/1024=3%, Rehash=0, Collisions=0/66=0%
+# Load=27/1024=3%, Rehash=0, Collisions=0/64=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 49 / storage = 575 B / avg = 11 B
-# current buf: size = 8162 B / used = 575 B / count = 49 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 562 B / avg = 11 B
+# current buf: size = 8162 B / used = 562 B / count = 48 / avg = 11 B
 
-# strcache performance: lookups = 72 / hit rate = 31%
+# strcache performance: lookups = 71 / hit rate = 32%
 # hash-table stats:
-# Load=49/8192=1%, Rehash=0, Collisions=0/72=0%
-# Finished Make data base on Mon Jul 25 00:11:09 2022
+# Load=48/8192=1%, Rehash=0, Collisions=0/71=0%
+# Finished Make data base on Mon Jul 25 18:37:19 2022
 
  

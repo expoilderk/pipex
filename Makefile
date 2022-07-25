@@ -11,7 +11,7 @@ OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = main_bonus.c pipex_bonus.c processes_bonus.c \
 	push_cmd_bonus.c split_cmd_bonus.c modifiers_bonus.c \
-	trim_cmd_bonus.c error_handler_bonus.c close_files.c
+	trim_cmd_bonus.c error_handler_bonus.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 

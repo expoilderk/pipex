@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/25 00:33:31 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:32:27 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@
 #define IN 0
 #define OUT 1
 
+
+void	children(char *argv, char *envp[]);
+
 int		pipex(int argc, char *argv[], char *envp[]);
-void	child_in(int **fd, int file, int argc, char *argv, char *envp[]); //Mais de 4 parametros
+void	child_in(int fd, int file, char *argv, char *envp[]);
 void	child_middle(int **fd, int argc, char *argv[], char *envp[]);
-void	child_out(int **fd, int file, int argc, char *argv, char *envp[]); //Mais de 4 parametros
+void	child_out(int fd, int file, char *argv, char *envp[]);
 
 void	push_cmd(char *args, char *envp[]);
 char	**get_path(char *envp[]);
