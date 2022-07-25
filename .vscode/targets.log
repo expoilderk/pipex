@@ -8,7 +8,7 @@ make: *** No rule to make target 'main.o', needed by 'pipex'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 25 18:37:19 2022
+# Make data base, printed on Mon Jul 25 20:39:12 2022
 
 # Variables
 
@@ -291,11 +291,11 @@ modifiers.o:
 split_cmd.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
 processes.o:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -309,7 +309,7 @@ pipex_bonus.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-25 11:15:31.194574359
+#  Last modified 2022-07-25 20:26:08.18354793
 #  File has been updated.
 #  Successfully updated.
 
@@ -410,7 +410,7 @@ fclean: clean
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 39):
 	make fclean -C $(LIBFT)
-	$(RM) $(NAME) $(NAME_BONUS)
+	$(RM) $(NAME) 
 
 # Not a target:
 main.o:
@@ -430,7 +430,7 @@ pipex_bonus: main_bonus.o pipex_bonus.o processes_bonus.o push_cmd_bonus.o split
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 27):
 	make -C $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME_BONUS)
+	$(CC) -g $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME)
 
 # Not a target:
 split_cmd_bonus.o:
@@ -457,12 +457,12 @@ processes_bonus.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 48 / storage = 562 B / avg = 11 B
-# current buf: size = 8162 B / used = 562 B / count = 48 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 563 B / avg = 11 B
+# current buf: size = 8162 B / used = 563 B / count = 48 / avg = 11 B
 
 # strcache performance: lookups = 71 / hit rate = 32%
 # hash-table stats:
 # Load=48/8192=1%, Rehash=0, Collisions=0/71=0%
-# Finished Make data base on Mon Jul 25 18:37:19 2022
+# Finished Make data base on Mon Jul 25 20:39:12 2022
 
  
