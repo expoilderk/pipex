@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_cmd.c                                       :+:      :+:    :+:   */
+/*   split_cmd_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:50:45 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 10:17:40 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/24 18:40:48 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 static void	ft_free(char **str, int index)
 {
@@ -75,7 +75,7 @@ static char	**ft_fillwords(char **splits, char *str, char c, int words)
 	return (splits);
 }
 
-char	**parser_cmd(char const *s, char c)
+char	**split_cmd(char const *s, char c)
 {
 	char	**splits;
 	char	*str;

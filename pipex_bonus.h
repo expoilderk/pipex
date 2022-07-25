@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 18:45:43 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/25 00:33:31 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,20 @@
 # include <errno.h>
 # include "libft/libft.h"
 
+#define IN 0
+#define OUT 1
+
 int		pipex(int argc, char *argv[], char *envp[]);
-void	child_in(int fd[], int fd_in, char *argv, char *envp[]);
-void	child_middle(int fd[], char *argv, char *envp[]);
-void	child_out(int fd[], int fd_out, char *argv, char *envp[]);
+void	child_in(int **fd, int file, int argc, char *argv, char *envp[]); //Mais de 4 parametros
+void	child_middle(int **fd, int argc, char *argv[], char *envp[]);
+void	child_out(int **fd, int file, int argc, char *argv, char *envp[]); //Mais de 4 parametros
 
 void	push_cmd(char *args, char *envp[]);
 char	**get_path(char *envp[]);
 char	**get_cmd(char *args);
 void	exec_cmd(char **paths, char **cmd, int index);
 
-char	**parser_cmd(char const *s, char c);
+char	**split_cmd(char const *s, char c);
 void	mod_countwords(char *str, int words);
 void	mod_wordlen(char *str, int slen);
 char	*trim_cmd(char const *s1, char const *set);

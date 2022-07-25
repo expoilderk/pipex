@@ -2,5 +2,7 @@
 	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
 		"pipex_bonus.h": "c"
-	}
+	},
+	"42header.email": "mreis-me@student.42.rio",
+	"42header.username": "mreis-me"
 }

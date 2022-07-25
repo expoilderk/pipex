@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_path_bonus.c                                   :+:      :+:    :+:   */
+/*   error_handler_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/17 19:57:09 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 18:32:41 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/07/17 19:07:54 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/07/24 18:40:03 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex_bonus.h"
 
-char	**get_path(char *envp[])
+void	msg_error(char *msg, char *cmd, int fd)
 {
-	int		i;
-	char	**paths;
+	ft_putstr_fd(msg, fd);
+	ft_putstr_fd(cmd, fd);
+	write(2, "\n", 1);
+	exit(EXIT_FAILURE);
+}
 
-	i = 0;
-	while (envp[i])
-	{
-		if (!ft_strncmp(envp[i], "PATH=", 5))
-		{
-			paths = ft_split(&envp[i][5], ':');
-			if (paths == NULL)
-			{
-				free_matrix(paths);
-				break ;
-			}
-			return (paths);
-		}
-		i++;
-	}
-	msg_error("Error: no PATH", "", 2);
-	return (NULL);
+void	msg_perror(char *msg, int status)
+{
+	perror(msg);
+	exit(status);
+}
+
+void	free_matrix(char **matrix)
+{
+	int	index;
+
+	index = -1;
+	while (matrix)
+		free(matrix[index++]);
+	free(matrix);
 }

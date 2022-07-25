@@ -1,5 +1,18 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory '/home/expoilderk/Documentos/Programação/42/pipex'
-make: 'pipex' is up to date.
-make: Leaving directory '/home/expoilderk/Documentos/Programação/42/pipex'
+make: Entering directory '/home/expoilderk/Documentos/42Rio/pipex'
+ 
+make: *** No rule to make target 'main.o', needed by 'pipex'.
+make: *** No rule to make target 'pipex.o', needed by 'pipex'.
+make: *** No rule to make target 'processes.o', needed by 'pipex'.
+
+make: *** No rule to make target 'push_cmd.o', needed by 'pipex'.
+make: *** No rule to make target 'split_cmd.o', needed by 'pipex'.
+
+make: *** No rule to make target 'modifiers.o', needed by 'pipex'.
+
+make: *** No rule to make target 'trim_cmd.o', needed by 'pipex'.
+
+make: *** No rule to make target 'error_handler.o', needed by 'pipex'.
+
+make: Leaving directory '/home/expoilderk/Documentos/42Rio/pipex'
  
