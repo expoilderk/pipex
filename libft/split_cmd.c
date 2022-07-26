@@ -6,11 +6,11 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 12:50:45 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/24 18:28:41 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:21:40 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
 static void	ft_free(char **str, int index)
 {
@@ -24,12 +24,20 @@ static int	ft_wordlen(char *str, char c)
 	int	slen;
 
 	slen = 0;
-	mod_wordlen(str, slen);
-	while (*str != '\0' && *str != c)
+	if (str[slen] == '\"')
 	{
-		str++;
 		slen++;
+		while (str[slen] != '\"')
+			slen++;
 	}
+	if (str[slen] == '\'')
+	{
+		slen++;
+		while (str[slen] != '\'')
+			slen++;
+	}
+	while (str[slen] != '\0' && str[slen] != c)
+		slen++;
 	return (slen);
 }
 
@@ -41,7 +49,6 @@ static int	ft_countwords(char *str, char c)
 	words = 0;
 	while (*str != '\0')
 	{
-		mod_countwords(str, words);
 		while (*str && *str == c)
 			str++;
 		wordlen = ft_wordlen(str, c);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mreis-me <falecommarlonreis@gmail.com>     +#+  +:+       +#+        */
+/*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 20:10:30 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/05/28 10:57:29 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:20:21 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+char	**split_cmd(char const *s, char c);
+
+char	*trim_cmd(char const *s1, char const *set);
 
 #endif // LIBFT_H

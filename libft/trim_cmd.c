@@ -6,11 +6,11 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 10:35:39 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/22 11:43:47 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/26 10:40:28 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
 char	*trim_cmd(char const *s1, char const *set)
 {
@@ -21,7 +21,7 @@ char	*trim_cmd(char const *s1, char const *set)
 		return (0);
 	if (*s1 && ft_strchr(set, *s1))
 		s1++;
-	slen = ft_strlen(s1) - 1;
+	slen = ft_strlen(s1) -1;
 	if (slen > 0 && ft_strchr(set, s1[slen]))
 		slen--;
 	trim = ft_substr(s1, 0, slen + 1);

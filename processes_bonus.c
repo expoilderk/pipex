@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 09:08:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/25 20:39:51 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:23:24 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ void	children(char *argv, char *envp[])
 		msg_perror("Error", EXIT_FAILURE);
 	if (pid == 0)
 	{
-		close(fd[IN]);
-		if (dup2(fd[OUT], STDOUT_FILENO) == -1)
+		close(fd[0]);
+		if (dup2(fd[1], STDOUT_FILENO) == -1)
 			msg_perror("Error", EXIT_FAILURE);
 		push_cmd(argv, envp);
 	}
 	else
 	{
-		close(fd[OUT]);
-		if (dup2(fd[IN], STDIN_FILENO) == -1)
+		close(fd[1]);
+		if (dup2(fd[0], STDIN_FILENO) == -1)
 			msg_perror("Error", EXIT_FAILURE);
 		wait(0);
 	}

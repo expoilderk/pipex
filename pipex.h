@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/24 18:28:31 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:25:50 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ void	push_cmd(char *args, char *envp[]);
 char	**get_path(char *envp[]);
 char	**get_cmd(char *args);
 void	exec_cmd(char **paths, char **cmd, int index);
-
-char	**split_cmd(char const *s, char c);
-void	mod_countwords(char *str, int words);
-void	mod_wordlen(char *str, int slen);
-char	*trim_cmd(char const *s1, char const *set);
 
 void	msg_perror(char *msg, int status);
 void	msg_error(char *msg, char *cmd, int fd);
