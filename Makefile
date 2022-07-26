@@ -1,6 +1,6 @@
 NAME = pipex
 NAME_BONUS = pipex_bonus
-HEADER = pipex.h pipex_bonus.h 
+HEADER = pipex.h pipex_bonus.h
 LIBFT = libft
 
 SRC = main.c pipex.c processes.c \
@@ -21,11 +21,11 @@ RM = rm -f
 
 $(NAME): $(OBJ)
 	make -C $(LIBFT)
-	$(CC) -g $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
 $(NAME_BONUS): $(OBJ_BONUS)
 	make -C $(LIBFT)
-	$(CC) -g $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME)
 
 all: $(NAME)
 
@@ -37,8 +37,7 @@ clean:
 
 fclean: clean
 	make fclean -C $(LIBFT)
-	$(RM) $(NAME) 
-#$(NAME_BONUS)
+	$(RM) $(NAME)
 
 re: fclean all
 
