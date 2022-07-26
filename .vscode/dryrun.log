@@ -1,13 +1,11 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/expoilderk/Documentos/42Rio/pipex'
+cc -Wall -Werror -Wextra   -c -o main.o main.c
+cc -Wall -Werror -Wextra   -c -o pipex.o pipex.c
+cc -Wall -Werror -Wextra   -c -o processes.o processes.c
+cc -Wall -Werror -Wextra   -c -o push_cmd.o push_cmd.c
+cc -Wall -Werror -Wextra   -c -o error_handler.o error_handler.c
+make -C libft
+cc -Wall -Werror -Wextra main.o pipex.o processes.o push_cmd.o error_handler.o libft/libft.a -o pipex
 make: Leaving directory '/home/expoilderk/Documentos/42Rio/pipex'
  
-make: *** No rule to make target 'main.o', needed by 'pipex'.
-make: *** No rule to make target 'pipex.o', needed by 'pipex'.
-make: *** No rule to make target 'processes.o', needed by 'pipex'.
-make: *** No rule to make target 'push_cmd.o', needed by 'pipex'.
-make: *** No rule to make target 'split_cmd.o', needed by 'pipex'.
-make: *** No rule to make target 'modifiers.o', needed by 'pipex'.
-make: *** No rule to make target 'trim_cmd.o', needed by 'pipex'.
-make: *** No rule to make target 'error_handler.o', needed by 'pipex'.
-

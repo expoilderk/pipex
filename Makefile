@@ -4,14 +4,12 @@ HEADER = pipex.h pipex_bonus.h
 LIBFT = libft
 
 SRC = main.c pipex.c processes.c \
-	push_cmd.c split_cmd.c modifiers.c \
-	trim_cmd.c error_handler.c
+	push_cmd.c error_handler.c
 
 OBJ = $(SRC:.c=.o)
 
 SRC_BONUS = main_bonus.c pipex_bonus.c processes_bonus.c \
-	push_cmd_bonus.c split_cmd_bonus.c modifiers_bonus.c \
-	trim_cmd_bonus.c error_handler_bonus.c
+	push_cmd_bonus.c error_handler_bonus.c
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 

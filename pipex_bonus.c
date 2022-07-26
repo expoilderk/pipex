@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:17:19 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/25 20:41:55 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/25 22:03:14 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 int	pipex(int argc, char *argv[], char *envp[])
 {
-	int		file[2];
+	int		fd_in;
+	int		fd_out;
 	int		index;
 
-	file[IN] = open(argv[1], O_RDONLY, 0666);
-	if (file[IN] == -1)
+	fd_in = open(argv[1], O_RDONLY);
+	if (fd_in == -1)
 		msg_perror("Error", EXIT_FAILURE);
-	file[OUT] = open(argv[argc -1], O_WRONLY | O_CREAT | O_TRUNC, 0666);
-	if (file[OUT] == -1)
+	fd_out = open(argv[argc -1], O_WRONLY | O_CREAT | O_TRUNC, 0666);
+	if (fd_out == -1)
 		msg_perror("Error", EXIT_FAILURE);
-	if (dup2(file[IN], STDIN_FILENO) == -1)
+	if (dup2(fd_in, STDIN_FILENO) == -1)
 		msg_perror("Error", EXIT_FAILURE);
 	index = 2;
 	while (index < argc -2)
@@ -31,7 +32,7 @@ int	pipex(int argc, char *argv[], char *envp[])
 		children(argv[index], envp);
 		index++;
 	}
-	if (dup2(file[OUT], STDOUT_FILENO) == -1)
+	if (dup2(fd_out, STDOUT_FILENO) == -1)
 		msg_perror("Error", EXIT_FAILURE);
 	push_cmd(argv[argc -2], envp);
 	return (0);
