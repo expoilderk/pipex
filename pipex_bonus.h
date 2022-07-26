@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:18:43 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/07/26 15:22:28 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:32:38 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <sys/types.h>
 # include <sys/wait.h>
-# include <unistd.h>
 # include <stdio.h>
 # include <string.h>
 # include <fcntl.h>

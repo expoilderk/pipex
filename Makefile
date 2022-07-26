@@ -23,7 +23,7 @@ $(NAME): $(OBJ)
 
 $(NAME_BONUS): $(OBJ_BONUS)
 	make -C $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT)/libft.a -o $(NAME_BONUS)
 
 all: $(NAME)
 
@@ -35,7 +35,7 @@ clean:
 
 fclean: clean
 	make fclean -C $(LIBFT)
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME_BONUS)
 
 re: fclean all
 
